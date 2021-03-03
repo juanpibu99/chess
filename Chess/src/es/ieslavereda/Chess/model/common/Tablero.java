@@ -45,13 +45,12 @@ public class Tablero {
 		negras.addHead(new Knight(Color.BLACK, new Coordenada('B', 8), this));
 		negras.addHead(new Bishop(Color.BLACK, new Coordenada('C', 8), this));
 		negras.addHead(new Queen(Color.BLACK, new Coordenada('D', 8), this));
-		negras.addHead(new King(Color.BLACK, new Coordenada('E', 8), this));
 		negras.addHead(new Bishop(Color.BLACK, new Coordenada('F', 8), this));
 		negras.addHead(new Knight(Color.BLACK, new Coordenada('G', 8), this));
 		negras.addHead(new Rook(Color.BLACK, new Coordenada('H', 8), this));
 
 		for (int i = 0; i < tablero.length; i++) {
-			//blancas.addHead(new Pawn(Color.WHITE, new Coordenada((char) ('A' + i), 2), this));
+			blancas.addHead(new Pawn(Color.WHITE, new Coordenada((char) ('A' + i), 2), this));
 			negras.addHead(new Pawn(Color.BLACK, new Coordenada((char) ('A' + i), 7), this));
 		}
 
@@ -70,6 +69,9 @@ public class Tablero {
 
 	public Lista<Pieza> getBlancas() {
 		return blancas;
+	}
+	public Lista<Pieza> getNegras() {
+		return negras;
 	}
 
 	public void eliminarPieza(Pieza p) {

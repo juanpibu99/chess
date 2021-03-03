@@ -180,9 +180,9 @@ public class Lista<T> {
 
 	public T getAndRemove(T elemento) {
 
-		if (elemento.equals(cabeza))
+		if (elemento.equals(cabeza.getInfo()))
 			return getHead();
-		else if (elemento.equals(cola))
+		else if (elemento.equals(cola.getInfo()))
 			return getTail();
 		else {
 

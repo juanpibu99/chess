@@ -9,7 +9,7 @@ public class Input {
 	public static String getString(String msg) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println(msg);
-		return sc.next();
+		return sc.nextLine();
 	}
 
 	public static int getInt(String msg) {
@@ -21,7 +21,8 @@ public class Input {
 				salida = Integer.parseInt(getString(msg));
 				error = false;
 			} catch (Exception e) {
-				System.out.println("Debe introducir un numero.");
+				System.out.println("You must introduce 1 number");
+				
 			}
 		} while (error);
 
@@ -37,16 +38,16 @@ public class Input {
 			try {
 				texto = getString(msg).toUpperCase();
 				if (texto.length() != 2)
-					System.out.println("Solo debes incluir dos caracteres");
+					System.out.println("You must introduce twoo characters only");
 				else if (texto.charAt(0) < 'A' || texto.charAt(0) > 'H')
-					System.out.println("La letra debe estar comprendida entre [A-H]");
+					System.out.println("The letter must be between [A-H]");
 				else if (Integer.parseInt(String.valueOf(texto.charAt(1))) < 1
 						|| Integer.parseInt(String.valueOf(texto.charAt(1))) > 8)
-					System.out.println("El numero debe estar comprendido entre [1-8]");
+					System.out.println("The number must be between [1-8]");
 				else
 					c = new Coordenada(texto.charAt(0), Integer.parseInt(String.valueOf(texto.charAt(1))));
 			} catch (Exception e) {
-				System.out.println("Debes introducir un numero en el segundo caracter.");
+				System.out.println("You must introduce 1 number in the second character");
 			}
 
 		} while (c == null);

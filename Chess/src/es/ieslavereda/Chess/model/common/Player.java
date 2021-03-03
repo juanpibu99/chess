@@ -9,6 +9,7 @@ import java.net.Socket;
 public class Player implements Serializable{
 	
 	private String name;
+	private int turno;
 	private Socket socket;
 	private ObjectOutputStream oos;
 	private ObjectInputStream ois;
@@ -20,6 +21,24 @@ public class Player implements Serializable{
 		this.name = name;
 		this.ip = ip;
 	}
+	
+
+	public int getTurno() {
+		return turno;
+	}
+
+
+	public void setTurno(int turno) {
+		this.turno = turno;
+	}
+
+
+	public Player(String name, Color color) {
+		super();
+		this.name = name;
+		this.color = color;
+	}
+
 
 	public String getName() {
 		return name;
